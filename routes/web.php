@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/pizzas', function () {
     return view('pizzas');
 });
+Route::get("/",function(){
+    return view("index");
+});
