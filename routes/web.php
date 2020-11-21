@@ -15,3 +15,4 @@ use App\Http\Controllers\PizzaController;
 Route::get("/",[PizzaController::class,'index'])->name("home");
 
 Route::get('/pizzas', [PizzaController::class,"pizzas"])->name("pizzas");
+Route::post("/",[PizzaController::class,'insert'])->name("insert");

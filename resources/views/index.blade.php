@@ -1,7 +1,11 @@
 @extends("layout.layout") @section("content")
 <div class="container">
     <h2 class="grey-text mt-4 d-inline">Welcome from My Pizza Project</h2>
-    <img src="{{asset('images/pizza-logo-design-template_15146-192.jpg') }}" width="400px" height="200px" class="img-responsive mt-3">
+    <img src="{{asset('images/pizza-logo-design-template_15146-192.jpg') }}" width="400px" height="200px" class="img-responsive mt-3"> @if(Session("success"))
+    <div class="alert alert-success">
+        {{ Session('success') }}
+    </div>
+    @endif
     <!-- Material form register -->
     <div class="card mt-4">
 
@@ -13,30 +17,41 @@
         <div class="card-body px-lg-5 pt-0">
 
             <!-- Form -->
-            <form class="text-center" action="#!">
+            <form class="text-center" action="{{route('insert')}}" method="post">
+                @csrf
 
 
                 <!-- user name -->
                 <div class="md-form mt-4">
-                    <input type="text" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">User Name</label>
+                    <input type="text" id="materialRegisterFormEmail" class="form-control" name="username">
+                    <label for="materialRegisterFormEmail">User Name</label> @error('username')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="md-form mt-4">
-                    <input type="text" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">Pizza Name</label>
+                    <input type="text" id="materialRegisterFormEmail" class="form-control" name="pizza_name">
+                    <label for="materialRegisterFormEmail">Pizza Name</label> @error('pizza_name')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="md-form mt-4">
-                    <input type="text" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">Topping</label>
+                    <input type="text" id="materialRegisterFormEmail" class="form-control" name="topping">
+                    <label for="materialRegisterFormEmail">Topping</label> @error('topping')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="md-form mt-4">
-                    <input type="text" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">Sauce</label>
+                    <input type="text" id="materialRegisterFormEmail" class="form-control" name="sauce">
+                    <label for="materialRegisterFormEmail">Sauce</label> @error('sauce')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
                 <div class="md-form mt-4">
-                    <input type="text" id="materialRegisterFormEmail" class="form-control">
-                    <label for="materialRegisterFormEmail">Price</label>
+                    <input type="text" id="materialRegisterFormEmail" class="form-control" name="price">
+                    <label for="materialRegisterFormEmail">Price</label> @error('price')
+                    <p class="text-danger">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <!-- Order button -->
