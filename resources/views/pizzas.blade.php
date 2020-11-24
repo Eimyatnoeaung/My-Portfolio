@@ -20,7 +20,7 @@
                 <th scope="row">{{ $pizza['pizza_name'] }}</th>
                 <th scope="row">{{ $pizza['topping'] }}</th>
                 <th scope="row">{{ $pizza['sauce'] }}</th>
-                <th scope="row">{{ $pizza['price'] }}</th>
+                <th scope="row">{{ $pizza['price'] }}$</th>
                 {{-- array method can use only this method ..... $pizza['pizza_name']  --}}
                 {{-- object format can use both method ..... $pizza['pizza_name']   and  $pizza->pizza_name  --}}
                 <td><button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalLoginForm">Edit Order</button></td>
