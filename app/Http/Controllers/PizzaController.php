@@ -12,7 +12,14 @@ class PizzaController extends Controller
     }
 
     function pizzas() {
-        return view('pizzas');
+        $pizzas=[
+            ["id"=>1,"username"=>"Aung","pizza_name"=>"chicken tikka","topping"=>"salad","sauce"=>"tomato sauce","price"=>8.99],
+            ["id"=>2,"username"=>"Kyaw","pizza_name"=>"chessy chicken pizza","topping"=>"salad","sauce"=>"tomato sauce","price"=>7.99],
+            ["id"=>3,"username"=>"Zaw","pizza_name"=>"hot pizza","topping"=>"salad","sauce"=>"tomato sauce","price"=>5.99],
+            ["id"=>4,"username"=>"MgMg","pizza_name"=>"hot chessy pizza","topping"=>"salad","sauce"=>"tomato sauce","price"=>11.99]
+        ];
+        // send data to blade file
+        return view('pizzas',['pizzas'=>$pizzas]);
     }
     function insert(Request $req) {
         // return $req->toArray;
