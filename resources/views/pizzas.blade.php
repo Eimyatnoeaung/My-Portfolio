@@ -15,24 +15,19 @@
         <tbody>
             @foreach($pizzas as $pizza)
             <tr>
-                <th scope="row">{{ $pizza['id'] }}</th>
-                <th scope="row">{{ $pizza['username'] }}</th>
+                <th scope="row">{{ $pizza->id }}</th>
+                <th scope="row">{{ $pizza->username }}</th>
                 <th scope="row">{{ $pizza['pizza_name'] }}</th>
                 <th scope="row">{{ $pizza['topping'] }}</th>
                 <th scope="row">{{ $pizza['sauce'] }}</th>
                 <th scope="row">{{ $pizza['price'] }}</th>
+                {{-- array method can use only this method ..... $pizza['pizza_name']  --}}
+                {{-- object format can use both method ..... $pizza['pizza_name']   and  $pizza->pizza_name  --}}
                 <td><button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalLoginForm">Edit Order</button></td>
                 <td><button class="btn btn-sm btn-success">Order Complete</button></td>
             </tr>
             @endforeach
-            <!-- <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@fat</td>
-                <td>$9.99</td>
-                <td><button class="btn btn-sm btn-success">Order Complete</button></td>
-            </tr> -->
+
         </tbody>
     </table>
 
