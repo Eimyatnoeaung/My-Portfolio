@@ -20,3 +20,5 @@ Route::post("/",[PizzaController::class,'insert'])->name("insert");
 Route::get("/pizzas/{id}",[PizzaController::class,"delete"])->name("delete");
 // edit form route
 Route::get("/pizzas/edit/{id}",[PizzaController::class,"edit"])->name("edit");
+//update route
+Route::post("/pizzas/update/{id}",[PizzaController::class,"update"])->name("update");

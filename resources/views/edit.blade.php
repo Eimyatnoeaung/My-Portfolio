@@ -17,7 +17,7 @@
         <div class="card-body px-lg-5 pt-0">
 
             <!-- Form -->
-            <form class="text-center" action="{{route('insert')}}" method="post">
+            <form class="text-center" action="{{route('update',$pizza->id)}}" method="post">
                 @csrf
 
 
