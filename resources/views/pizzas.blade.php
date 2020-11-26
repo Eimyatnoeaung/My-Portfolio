@@ -27,7 +27,8 @@
                 <th scope="row">{{ $pizza['sauce'] }}</th>
                 <th scope="row">{{ $pizza['price'] }}$</th>
                 {{-- array method can use only this method ..... $pizza['pizza_name'] --}} {{-- object format can use both method ..... $pizza['pizza_name'] and $pizza->pizza_name --}}
-                <td><button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalLoginForm">Edit Order</button></td>
+                {{-- <td><button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalLoginForm">Edit Order</button></td> --}}
+                <td><a class="btn btn-sm btn-warning" href="{{ route("edit",$pizza->id) }}">Edit Order</a></td>
                 <td><a class="btn btn-sm btn-success" href="{{ route("delete",$pizza->id) }}">Order Complete</a></td>
             </tr>
             @endforeach
@@ -35,7 +36,7 @@
         </tbody>
     </table>
 
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
@@ -74,7 +75,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </div>
 @endsection

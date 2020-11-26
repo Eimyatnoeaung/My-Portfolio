@@ -60,4 +60,10 @@ class PizzaController extends Controller
         $delete_pizza_data->delete();
         return back()->with ("delete","$delete_pizza_data->username 's Order is deleted");
     }
+    //edit form blade method
+    function edit($id){
+        $pizza=Pizza::find($id);
+        return view("edit",['pizza'=>$pizza]);
+        // return $pizza;
+    }
 }
