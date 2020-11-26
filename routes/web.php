@@ -16,3 +16,5 @@ Route::get("/",[PizzaController::class,'index'])->name("home");
 
 Route::get('/pizzas', [PizzaController::class,"pizzas"])->name("pizzas");
 Route::post("/",[PizzaController::class,'insert'])->name("insert");
+//delete
+Route::get("/pizzas/{id}",[PizzaController::class,"delete"])->name("delete");

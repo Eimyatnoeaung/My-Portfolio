@@ -1,5 +1,10 @@
 @extends("layout.layout") @section("content")
 <div class="container">
+    @if(Session('delete'))
+    <div class="alert alert-danger">
+        {{ Session("delete") }}
+    </div>
+    @endif
     <table class="table table-hover">
         <thead>
             <tr>
@@ -21,10 +26,9 @@
                 <th scope="row">{{ $pizza['topping'] }}</th>
                 <th scope="row">{{ $pizza['sauce'] }}</th>
                 <th scope="row">{{ $pizza['price'] }}$</th>
-                {{-- array method can use only this method ..... $pizza['pizza_name']  --}}
-                {{-- object format can use both method ..... $pizza['pizza_name']   and  $pizza->pizza_name  --}}
+                {{-- array method can use only this method ..... $pizza['pizza_name'] --}} {{-- object format can use both method ..... $pizza['pizza_name'] and $pizza->pizza_name --}}
                 <td><button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalLoginForm">Edit Order</button></td>
-                <td><button class="btn btn-sm btn-success">Order Complete</button></td>
+                <td><a class="btn btn-sm btn-success" href="{{ route("delete",$pizza->id) }}">Order Complete</a></td>
             </tr>
             @endforeach
 
