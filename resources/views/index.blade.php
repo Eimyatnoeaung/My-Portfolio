@@ -1,6 +1,6 @@
 @extends("layout.layout") @section("content")
 <div class="container">
-    <h2 class="grey-text mt-4 d-inline">Welcome from My Pizza Project</h2>
+    <h2 class="grey-text mt-4 d-inline">Welcome from My Pizza Shop</h2>
     <img src="{{asset('images/pizza-logo-design-template_15146-192.jpg') }}" width="400px" height="200px" class="img-responsive mt-3"> @if(Session("success"))
     <div class="alert alert-success">
         {{ Session('success') }}

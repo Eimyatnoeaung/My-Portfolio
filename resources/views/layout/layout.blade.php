@@ -33,21 +33,26 @@
           <li class="nav-item active">
             <a class="nav-link" href="{{route("home")}}">Home <span class="sr-only">(current)</span></a>
           </li>
+
+        @auth
           <li class="nav-item">
             <a class="nav-link" href="{{route("pizzas")}}">All Pizza Order</a>
           </li>
+        @endauth
+        @guest
+          <li class="nav-item">
+            <a class="nav-link" href="{{route("login")}}">IsAdmin?</a>
+          </li>
+        @endguest
 
         </ul>
         <ul class="navbar-nav nav-flex-icons">
+        @auth
           <li class="nav-item">
-            <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"><i class="fab fa-instagram"></i></a>
-          </li>
+        @endauth
+
         </ul>
       </div>
     </nav>
